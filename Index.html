@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexo Arts - Design que Destaca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { background: #050505; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; }
+    
+    #btn-musica {
+      position: fixed; top: 20px; right: 20px; z-index: 999;
+      background: #8b5cf6; color: #fff; border: none;
+      padding: 12px 18px; border-radius: 50px; cursor: pointer;
+      font-weight: bold; transition: 0.3s;
+    }
+    #btn-musica:hover { background: #7c3aed; transform: scale(1.1); }
+    
+    header {
+      text-align: center; padding: 100px 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #22c55e 100%);
+    }
+    header h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 4px; }
+    header p { font-size: 1.3em; opacity: 0.95; }
+    .btn-whats {
+      display: inline-block; margin-top: 25px; padding: 16px 35px;
+      background: #22c55e; color: #fff; text-decoration: none;
+      border-radius: 50px; font-weight: bold; font-size: 1.1em;
+      transition: 0.3s;
+    }
+    .btn-whats:hover { transform: scale(1.05); background: #16a34a; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+    h2 { text-align: center; font-size: 2.5em; margin-bottom: 50px; color: #8b5cf6; }
+    
+    .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .card {
+      background: #111; border-radius: 20px; overflow: hidden;
+      border: 1px solid #222; transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); border: 1px solid #8b5cf6; box-shadow: 0 10px 30px rgba(139,92,246,0.3); }
+    .card img { width: 100%; height: 280px; object-fit: cover; }
+    .card-info { padding: 20px; text-align: center; }
+    .card-info h3 { color: #22c55e; margin-bottom: 8px; font-size: 1.4em; }
+    .card-info p { color: #aaa; }
+    
+    footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: #666; }
+  </style>
+</head>
+<body>
+
+  <button id="btn-musica" onclick="toggleMusica()">🔊 Música</button>
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1>NEXO ARTS</h1>
+    <p>Design com IA que faz seu negócio se destacar</p>
+    <a href="https://wa.me/5513985997618" class="btn-whats">💬 Fale comigo no WhatsApp</a>
+  </header>
+
+  <div class="container">
+    <h2>Portfólio</h2>
+    <div class="galeria">
+      
+      <div class="card"><img src="futebol.jpg" alt="NEXO CUP 2026"><div class="card-info"><h3>NEXO CUP 2026</h3><p>Pôster Esportivo</p></div></div>
+      <div class="card"><img src="campeonato.jpg" alt="Campeonato"><div class="card-info"><h3>Campeonato</h3><p>Arte Esportiva</p></div></div>
+      <div class="card"><img src="games.jpg" alt="Thumbnail Gamer"><div class="card-info"><h3>Thumbnail Gamer</h3><p>Cheguei no Level Máximo</p></div></div>
+      <div class="card"><img src="social.jpg" alt="BRASA BURGER"><div class="card-info"><h3>BRASA BURGER</h3><p>Social Media - Combo da Semana</p></div></div>
+      <div class="card"><img src="wallpaper.jpg" alt="Wallpaper Gamer"><div class="card-info"><h3>Wallpaper Gamer</h3><p>Cidade Futurista</p></div></div>
+      <div class="card"><img src="produto.jpg" alt="NEXO RUN"><div class="card-info"><h3>NEXO RUN</h3><p>Foto de Produto - Tênis</p></div></div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Nexo Arts. Design • IA • Resultados</p>
+  </footer>
+
+  <script>
+    const musica = document.getElementById('musica');
+    musica.volume = 0.1; // Volume em 10%
+    const btn = document.getElementById('btn-musica');
+    let tocando = false;
+    function toggleMusica() {
+      if (tocando) { musica.pause(); btn.innerText = '🔇 Música'; }
+      else { musica.play(); btn.innerText = '🔊 Música'; }
+      tocando = !tocando;
+    }
+  </script>
+
+</body>
+</html>
